@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Jaydeep Beldar | FY Student | Chemical Student</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+  <button class="dark-toggle" onclick="toggleDarkMode()">Toggle Mode</button>
+  <div class="header-content">
+    <div class="profile-photo">
+      <img src="profile.jpg" alt="Jaydeep Beldar">
+    </div>
+    <div class="intro-text">
+      <h1>Jaydeep Beldar</h1>
+      <h2>FY Student | Chemical Engineering Student</h2>
+    </div>
+  </div>
+</header>
+
+<nav>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#hobbies">Hobbies</a></li>
+    <li><a href="#certificates">Certificates</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<main>
+  <!-- About Section -->
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      Hi! I'm <strong>Jaydeep Beldar</strong>, currently pursuing my first year in Chemical Engineering at MIT AOE.
+      I have a been interest in Public Speaking, Web3, and Kabbdi...
+    </p>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills">
+      <div class="card">
+        <h3>Programming</h3>
+        <p>Skilled in C, C++, HTML, CSS. Currently exploring Python and JavaScript.</p>
+      </div>
+      <div class="card">
+        <h3>Creative Thinking</h3>
+        <p>Creative thinking is imaginative, innovative, curious, flexible, original, insightful, intuitive, visionary, spontaneous, and resourceful..</p>
+      </div>
+      <div class="card">
+        <h3>Video Editing</h3>
+        <p>Experienced with tools like Filmora and CapCut for editing and animation.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects">
+      
+      <div class="card">
+        <h3>
+          "EcoMotion: Chemically-Driven Car for a Sustainable Future"
+        </h3>
+        <p>Car powered by chemical reactions, offering a clean, innovative, and eco-friendly transport solution.</p>
+      </div>
+     
+    </div>
+  </section>
+
+  <!-- Certificates -->
+  <section id="certificates">
+    <h2>My Certificates</h2>
+    <div class="certificates">
+      <!-- Certificate Cards Here -->
+    </div>
+  </section>
+
+  <!-- Education -->
+  <section id="education">
+    <h2>Education</h2>
+    <p><strong>B.Tech in Chemical Engineering</strong> — MIT AOE<br>2024 – Present</p>
+  </section>
+
+  <!-- Hobbies -->
+  <section id="hobbies">
+    <h2>Hobbies</h2>
+    <div class="hobbies">
+      <div class="card"><p>Gaming 🎮</p></div>
+      <div class="card"><p>Exploring New Places ⛰</p></div>
+      <div class="card"><p>Kabaddi 💪🏻</p></div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <p><strong>Email:</strong> beldarjaydeep43@gmail.com</p> <!-- Update if needed -->
+    <p><strong>Phone:</strong> +91 83788 86868</p>
+    <p><strong>LinkedIn:</strong> 
+      <a href="https://www.linkedin.com/in/jaydeep-sanjay-beldar-b104a8337" target="_blank">View on LinkedIn</a>
+    </p>
+    <button onclick="alert('Thanks for visiting my portfolio!')">Say Hi!</button>
+  </section>
+</main>
+
+<footer>
+  <p>&copy; 2025 Jaydeep's Portfolio | All Rights Reserved</p>
+</footer>
+
+<!-- Popup -->
+<div id="popup" class="popup-overlay">
+  <div class="modal-content">
+    <span class="close-btn" onclick="document.getElementById('popup').style.display='none'">&times;</span>
+    <h2>Pollution & Aquatic Life</h2>
+    <p><strong>Primary Research:</strong> Survey questions...</p>
+    <a href="ideation/ts.pdf" target="_blank"><button>My Project PPT</button></a>
+  </div>
+</div>
+
+<!-- JS -->
+<script>
+  function toggleDarkMode() {
+    document.body.classList.toggle("dark-mode");
+  }
+
+  const sections = document.querySelectorAll("section");
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+      }
+    });
+  }, { threshold: 0.1 });
+
+  sections.forEach(section => observer.observe(section));
+</script>
+
+</body>
+</html>

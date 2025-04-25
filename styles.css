@@ -1,0 +1,266 @@
+:root {
+    --bg-color: #f4f7fa;
+    --header-bg: #d1e2f3;
+    --text-color: #333;
+    --highlight: #1f3c88;
+    --accent: #00adb5;
+    --nav-bg: #23325c;
+    --section-bg: #fff;
+    --card-bg: #ffffff;
+  }
+  
+  body.dark-mode {
+    --bg-color: #121212;
+    --header-bg: #1e1e1e;
+    --text-color: #f0f0f0;
+    --highlight: #4fc3f7;
+    --accent: #00adb5;
+    --nav-bg: #272727;
+    --section-bg: #1e1e1e;
+    --card-bg: #1f1f1f;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    transition: background 0.3s, color 0.3s;
+  }
+  
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+    background: var(--header-bg);
+    color: var(--highlight);
+    position: relative;
+  }
+  
+  .dark-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: var(--accent);
+    border: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .header-content {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    max-width: 1000px;
+  }
+  
+  .profile-photo img {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #fff;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .intro-text h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+  }
+  
+  .intro-text h2 {
+    font-size: 1.2em;
+    font-weight: 300;
+    color: var(--highlight);
+  }
+  
+  nav {
+    background: var(--nav-bg);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  }
+  
+  nav ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    list-style: none;
+  }
+  
+  nav li {
+    margin: 10px 20px;
+  }
+  
+  nav a {
+    color: #fff;
+    font-weight: 600;
+    padding: 6px 8px;
+    transition: background 0.3s, color 0.3s;
+  }
+  
+  nav a:hover {
+    background: #fff;
+    color: var(--nav-bg);
+    border-radius: 4px;
+  }
+  
+  main {
+    padding: 40px 20px;
+  }
+  
+  section {
+    max-width: 1000px;
+    margin: 40px auto;
+    background: var(--section-bg);
+    border-radius: 12px;
+    padding: 40px 30px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  
+  section.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  section h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: var(--highlight);
+    text-align: center;
+    position: relative;
+  }
+  
+  section h2::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: var(--accent);
+    margin: 10px auto 0;
+    border-radius: 2px;
+  }
+  
+  .skills,
+  .projects,
+  .certificates,
+  .hobbies {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .card {
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 280px;
+    text-align: center;
+    transition: transform 0.3s;
+  }
+  
+  .card:hover {
+    transform: translateY(-8px);
+  }
+  
+  button {
+    padding: 10px 16px;
+    margin-top: 10px;
+    border: none;
+    background: var(--accent);
+    color: #fff;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  button:hover {
+    background: #008a95;
+  }
+  
+  #about p {
+    max-width: 700px;
+    margin: auto;
+    text-align: center;
+  }
+  
+  footer {
+    text-align: center;
+    padding: 20px;
+    background: var(--nav-bg);
+    color: #fff;
+  }
+  
+  @media (max-width: 600px) {
+    .header-content {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .intro-text h1 {
+      font-size: 2.2em;
+    }
+  
+    nav ul {
+      flex-direction: column;
+    }
+  
+    nav li {
+      margin: 8px 0;
+    }
+  
+    .card {
+      width: 90%;
+    }
+  }
+  
+  .popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+  }
+  
+  .modal-content {
+    background: var(--card-bg);
+    color: var(--text-color);
+    padding: 30px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 600px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    position: relative;
+    text-align: left;
+  }
+  
+  .close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 24px;
+    color: var(--accent);
+    cursor: pointer;
+  }
